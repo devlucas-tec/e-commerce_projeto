@@ -1,3 +1,8 @@
+/**
+ * Módulo de Gerenciamento do Carrinho (CarrinhoModule)
+ * Gerencia o estado dos itens no carrinho e a renderização na interface.
+ * Padrão Utilizado: Module Pattern.
+ */
 const CarrinhoModule = (() => {
 
     // Dados simulados do carrinho (futuramente serão obtidos do Spring Boot)
@@ -6,14 +11,11 @@ const CarrinhoModule = (() => {
         { id: 1, nome: "Smartwatch Pro A1", preco: 750.00, quantidade: 2 },
         { id: 3, nome: "Conjunto de Panelas Premium", preco: 499.90, quantidade: 1 },
     ];
-
+    
     const calcularSubtotalItem = (preco, quantidade) => {
         return preco * quantidade;
     };
 
-    /**
-     * Cria o HTML para um único item na lista do carrinho.
-     */
     const criarHtmlItem = (item) => {
         const subtotal = calcularSubtotalItem(item.preco, item.quantidade);
         const precoUnitarioFormatado = item.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -52,7 +54,6 @@ const CarrinhoModule = (() => {
             subtotal += calcularSubtotalItem(item.preco, item.quantidade);
         });
         
-        // Simulação do Frete (valor fixo por enquanto)
         const frete = carrinhoItens.length > 0 ? 50.00 : 0.00; 
         const totalGeral = subtotal + frete;
 
@@ -87,18 +88,10 @@ const CarrinhoModule = (() => {
         if (btnFinalizar) {
             btnFinalizar.addEventListener('click', () => {
                 alert("Simulando Finalizar Compra! (Próxima etapa: Checkout)");
-                // FUTURAMENTE: Redirecionar para a página de Checkout, enviando os dados do carrinho.
             });
         }
     };
-
-    // ----------------------------------------------------
-    // 3. FUNÇÕES PÚBLICAS
-    // ----------------------------------------------------
     
-    /**
-     * Renderiza o carrinho completo na interface.
-     */
     const renderizarCarrinho = () => {
         const container = document.getElementById('lista-carrinho');
         
@@ -111,24 +104,16 @@ const CarrinhoModule = (() => {
         }
         
         renderizarResumo();
-        configurarEventListeners(); // Reconfigura após a renderização
+        configurarEventListeners(); 
     };
     
-    /**
-     * Remove um item do carrinho.
-     */
     const removerItem = (produtoId) => {
-        // FUTURAMENTE: Fazer requisição DELETE para o Spring Boot
         carrinhoItens = carrinhoItens.filter(item => item.id !== produtoId);
         console.log(`Produto ${produtoId} removido.`);
         renderizarCarrinho();
     };
     
-    /**
-     * Atualiza a quantidade de um item no carrinho.
-     */
     const atualizarQuantidade = (produtoId, novaQuantidade) => {
-        // FUTURAMENTE: Fazer requisição PUT para o Spring Boot
         const item = carrinhoItens.find(i => i.id === produtoId);
         if (item && novaQuantidade >= 1) {
             item.quantidade = novaQuantidade;
@@ -136,21 +121,36 @@ const CarrinhoModule = (() => {
             renderizarCarrinho();
         }
     };
-    
-    // Inicialização do módulo
-    const init = () => {
-        renderizarCarrinho();
-        // Nota: O módulo de produtos deve ter uma função para chamar adicionarItem aqui
+
+    const adicionarItem = (produtoId, quantidade) => {
+        const itemExistente = carrinhoItens.find(item => item.id === produtoId);
+
+        if (itemExistente) {
+            itemExistente.quantidade += quantidade;
+        } else {
+            const novoItem = { 
+                id: produtoId, 
+                nome: `Produto ID ${produtoId}`, 
+                preco: 100.00 * produtoId, 
+                quantidade: quantidade 
+            };
+            carrinhoItens.push(novoItem);
+        }
+        
+        console.log(`Produto ${produtoId} adicionado. Novo total: ${carrinhoItens.length} itens.`);
+        renderizarCarrinho(); 
     };
 
-    // Retorna a API pública
+    const init = () => {
+        renderizarCarrinho();
+    };
+
     return {
         init: init,
         remover: removerItem,
         atualizar: atualizarQuantidade,
-        // AdicionarItem também seria exportada, mas por enquanto será apenas simulada no produtos.js
+        adicionar: adicionarItem 
     };
 })();
 
-// Inicia o módulo quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', CarrinhoModule.init);
