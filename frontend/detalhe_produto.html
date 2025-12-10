@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto | Nome do Produto</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/detalhe_produto.css"> </head>
+<body>
+    <header class="main-header">
+        <div class="logo">E-Commerce</div>
+        <div class="header-actions">
+            <a href="index.html" class="icon-link">Voltar à Loja</a>
+            <a href="carrinho.html" class="icon-link">Carrinho</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="produto-detalhe-layout">
+            
+            <div class="produto-midia">
+                <img id="imagem-principal" src="https://via.placeholder.com/600x600?text=Produto+Principal" alt="Imagem Principal" class="imagem-principal">
+                <div class="galeria-miniaturas">
+                    <img src="https://via.placeholder.com/100x100?text=1" alt="Miniatura 1" class="miniatura">
+                    <img src="https://via.placeholder.com/100x100?text=2" alt="Miniatura 2" class="miniatura">
+                </div>
+            </div>
+
+            <div class="produto-informacoes">
+                <h1 id="produto-nome">Smartphone XYZ Ultra (256GB, Preto)</h1>
+                
+                <div class="produto-avaliacao-resumo">
+                    <span class="nota-media">4.7 / 5.0</span>
+                    <a href="#secao-avaliacoes">(Ver 45 avaliações)</a>
+                </div>
+
+                <p class="produto-preco-detalhe" id="produto-preco">R$ 2.999,00</p>
+                
+                <p id="produto-descricao">
+                    O mais novo lançamento com câmera tripla, bateria de longa duração e design ergonômico. Perfeito para fotos profissionais e uso diário intenso.
+                </p>
+
+                <div class="produto-meta">
+                    <p>Disponibilidade: <strong id="produto-estoque">Em estoque (25 unidades)</strong></p>
+                    <p>Vendido e entregue por: <a href="#" id="link-vendedor">Tech Vendas</a></p>
+                </div>
+                
+                <div class="opcoes-compra">
+                    <label for="quantidade">Quantidade:</label>
+                    <input type="number" id="quantidade" value="1" min="1" max="25" class="input-quantidade">
+                    <button class="btn-comprar">Comprar Agora</button>
+                    <button class="btn-carrinho-add">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="secao-avaliacoes" class="secao-avaliacoes">
+            <h2>Avaliações dos Clientes</h2>
+            
+            <div class="avaliacoes-estatisticas">
+                <p>Média de Notas: <strong class="nota-media-destaque">4.7</strong> de 5</p>
+            </div>
+
+            <div id="lista-avaliacoes">
+                <article class="avaliacao-card">
+                    <p class="avaliacao-autor">Por: João M. (Cliente ID: 105)</p>
+                    <p class="avaliacao-nota">Nota: <strong class="nota-destaque">5/5</strong></p>
+                    <p class="avaliacao-comentario">"Produto chegou super rápido e a qualidade da câmera é impressionante! Recomendo a todos."</p>
+                    <span class="avaliacao-data">Publicado em: 05/12/2025</span>
+                </article>
+
+                <article class="avaliacao-card">
+                    <p class="avaliacao-autor">Por: Maria S. (Cliente ID: 210)</p>
+                    <p class="avaliacao-nota">Nota: <strong class="nota-destaque">4/5</strong></p>
+                    <p class="avaliacao-comentario">"Muito bom, apenas achei a bateria um pouco menor do que o esperado. Mas vale o preço."</p>
+                    <span class="avaliacao-data">Publicado em: 01/12/2025</span>
+                </article>
+            </div>
+            
+            <div class="form-avaliacao">
+                <h3>Deixe sua Avaliação</h3>
+                </div>
+        </section>
+
+    </main>
+    
+    <script src="js/detalhe_produto.js" type="module"></script>
+</body>
+</html>

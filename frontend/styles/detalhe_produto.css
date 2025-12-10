@@ -1,0 +1,137 @@
+.produto-detalhe-layout {
+    display: flex;
+    gap: 40px;
+    padding: 30px 0;
+}
+
+.produto-midia {
+    flex: 1;
+}
+
+.imagem-principal {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.galeria-miniaturas {
+    display: flex;
+    gap: 10px;
+}
+
+.miniatura {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.miniatura:hover {
+    border-color: #007bff;
+}
+
+.produto-informacoes {
+    flex: 1;
+}
+
+.produto-avaliacao-resumo {
+    margin: 10px 0 20px 0;
+    font-size: 1.1em;
+}
+
+.nota-media {
+    font-weight: bold;
+    color: orange;
+    margin-right: 10px;
+}
+
+.produto-preco-detalhe {
+    font-size: 2.5em;
+    color: #dc3545; 
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.produto-meta p {
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1.5;
+}
+
+.opcoes-compra {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.input-quantidade {
+    width: 60px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-comprar {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-carrinho-add {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.secao-avaliacoes {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.avaliacoes-estatisticas {
+    margin-bottom: 20px;
+}
+
+.nota-media-destaque {
+    font-size: 1.5em;
+    color: orange;
+}
+
+.avaliacao-card {
+    border: 1px solid #f0f0f0;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.avaliacao-nota {
+    margin: 5px 0;
+}
+
+.nota-destaque {
+    color: orange;
+    font-weight: bold;
+}
+
+.avaliacao-comentario {
+    font-style: italic;
+    color: #333;
+}
