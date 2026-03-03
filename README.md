@@ -37,4 +37,5 @@ Detalhamento das tabelas, chaves primárias (PK), chaves estrangeiras (FK) e tip
 ## 🛠️ Tecnologias Utilizadas
 
 * **SGBD:** NeonDB [PostgreSQL]
+* **Ferramenta CASE:** [BrModelo Web]
   
