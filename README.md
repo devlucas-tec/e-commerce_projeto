@@ -21,7 +21,7 @@ O projeto segue as etapas de modelagem clássica para garantir a normalização 
 ### 1. Modelo Conceitual
 Focado nas entidades e regras de negócio de alto nível.
 
-![Modelo Conceitual](./img/modelo-conceitual.png)
+![Modelo Conceitual](./img/modelo_conceitual.PNG)
 [🔗 Visualizar diagrama original no editor](https://app.brmodeloweb.com/#!/publicview/69a720f96431b763534360b3)
 
 ---
@@ -29,7 +29,7 @@ Focado nas entidades e regras de negócio de alto nível.
 ### 2. Modelo Lógico (Relacional)
 Detalhamento das tabelas, chaves primárias (PK), chaves estrangeiras (FK) e tipos de dados compatíveis com PostgreSQL.
 
-![Modelo Lógico](./img/modelo-logico.png)
+![Modelo Lógico](./img/modelo_logico.PNG)
 [🔗 Visualizar diagrama original no editor](https://app.brmodeloweb.com/#!/publicview/69a721586431b763534360d4)
 
 ---
